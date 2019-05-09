@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, FlatList, Alert } from 'react-native';
 import {
   primaryColor,
   textIcons,
@@ -23,22 +23,12 @@ export default class App extends React.Component {
   componentDidMount() {
     axios.get('https://randomuser.me/api/?results=500')
          .then(response => {
-           const pessoasRandom = response.data.results  
-           this.setState({pessoas: pessoasRandom})
+           this.setState({pessoas: response.data.results })
          })
          .catch(error => {
              console.log(error)
          })
-    /*const url = 'https://randomuser.me/api/?results=5000';
-    // The data we are going to send in our request
-    // The parameters we are gonna pass to the fetch function
-    let fetchData = {
-      method: 'get',
-      headers: new Headers()
     }
-    fetch(url, fetchData)
-      .then(response => response.json()).then(data => this.setState({ pessoas: data.results }))
-  */}
 
   render() {
     return (
@@ -54,8 +44,9 @@ export default class App extends React.Component {
               uri={item.picture.thumbnail}
               email={item.email}
               phone ={item.phone}
-
+              onPress={()=> Alert.alert(item.name.first)}
             />
+      
           )}
 
         />

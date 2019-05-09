@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity,StyleSheet, Image, FlatList } from 'react-native';
 import {
     primaryColor,
     textIcons,
@@ -16,26 +16,26 @@ export default class PessoaRandom extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
                 <View style={styles.containerImage}>
                     <ImagePessoa uri={this.props.uri} />
 
                 </View>
                 <View style={styles.lightText}>
-                    <Text style={subTitles}>
-                        {this.props.first + ' ' + this.props.last + ', ' +this.props.age}
+                    <Text style={titleStyle}>
+                        {`${this.props.first}, ${this.props.last}, ${this.props.age}`}
                     </Text>
 
-                    <Text style={{ ...titleStyle, textAlign: "left" }}>
+                    <Text style={{ ...subTitles, textAlign: "left" }}>
                         {this.props.email}
                     </Text>
 
                     <Text style={styles.normalText}>
-                        {this.props.gender + ', '+ this.props.phone}
+                        {`${this.props.gender}, ${this.props.phone}`}
                     </Text>
 
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: primaryColor,
         alignItems: "center",
-        backgroundColor: 'gray',
+        backgroundColor: 'white',
         zIndex: -1
 
     },

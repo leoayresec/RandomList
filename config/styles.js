@@ -11,12 +11,12 @@ export const dividerColor = '#BDBDBD';
 export const titleStyle = {
     color: 'black',
     fontSize: 18,
-    textAlign: 'center',
+    fontWeight: "bold"
   };
   
   export const subTitles = {
     color: 'black',
-    fontSize: 16,
+    fontSize: 14,
   };
   
   export const normalText = {
