@@ -1,10 +1,11 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import {primaryColor} from '../config/styles'
+import {primaryColor} from '../config/styles';
+import CampoDetalhe from '../components/CampoDetalhe';
 
 // create a component
-export default class detalhePessoa extends React.Component {
+export default class DetalhePessoa extends React.Component {
 
     constructor(props) {
         super(props);
@@ -18,13 +19,15 @@ export default class detalhePessoa extends React.Component {
 
         return (
             <View style={styles.container}>
-                <View style={{flex:1, alignItems:'center', paddingTop:30}}>
-                    <Image source={{
-                        uri: params.picture.large,
-                    }}
-                        style={{ width: 150, height: 150, borderRadius: 75 }}
-                        resizeMode={'contain'} />
-                </View>
+             <CampoDetalhe
+             uri={params.picture.large}
+             email={params.email}
+             first={params.name.first}
+             last={params.name.last}
+             endereco={params.location.street + ', ' + params.location.city	+ ', '+ params.location.state}
+             />
+
+            
             </View>
         );
     }

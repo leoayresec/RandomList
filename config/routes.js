@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator, createAppContainer} from 'react-navigation';
-import detalhePessoa from '../screens/detalhePessoa'
-import Home from '../screens/home'
+import DetalhePessoa from '../screens/DetalhePessoa'
+import Home from '../screens/Home'
 
 const AppNavigator = createStackNavigator({
    
@@ -11,8 +11,8 @@ const AppNavigator = createStackNavigator({
             header: null
         })
     },
-    detalhePessoa:{
-        screen:detalhePessoa,
+    DetalhePessoa:{
+        screen:DetalhePessoa,
         navigationOptions: () => ({
             title: 'Detalhes'
         })

@@ -23,7 +23,7 @@ export default class PessoaRandom extends Component {
                 </View>
                 <View style={styles.lightText}>
                     <Text style={titleStyle}>
-                        {`${this.props.first}, ${this.props.last}, ${this.props.age}`}
+                        {`${this.props.first} ${this.props.last}, ${this.props.age}`}
                     </Text>
 
                     <Text style={{ ...subTitles, textAlign: "left" }}>

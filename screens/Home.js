@@ -42,7 +42,7 @@ export default class Home extends React.Component {
        }
        _onPress = (user) =>{
 
-        this.props.navigation.navigate('detalhePessoa', user)
+        this.props.navigation.navigate('DetalhePessoa', user)
 
        }
       render() {
