@@ -14,13 +14,13 @@ export default class CampoDetalhe extends Component {
                     }}
                         style={styles.imageDetalhe}
                     />
-                    <Text style={titleStyle}>{this.props.first + ' ' +this.props.last}</Text>
+                    <Text style={{...titleStyle, fontSize:24}}>{this.props.first + ' ' +this.props.last}</Text>
                 </View>
                 <View style={styles.containerDados}>
 
-                    <Text>Email: {this.props.email}</Text>
+                    <Text style={styles.textDados}>Email: {this.props.email}</Text>
 
-                    <Text>Endereço: {this.props.endereco}</Text>
+                    <Text style={styles.textDados}>Endereço: {this.props.endereco}</Text>
 
                 </View>
             </View>
@@ -39,15 +39,24 @@ const styles = StyleSheet.create({
     imageView: {
         flex: 1,
         alignItems: 'center',
-        paddingTop: 30
+        justifyContent:'space-around',
+        paddingTop: 30,
+        height:200,
+        
     },
     imageDetalhe: {
-        width: 150,
-        height: 150,
-        borderRadius: 75
+        width: 175,
+        height: 175,
+        borderRadius: 82
     },
     containerDados:{
         flex:1,
-        alignItems:'center'
+        flexWrap:'wrap',
+        paddingHorizontal:20
+    },
+    textDados:{
+        fontSize:18,
+        textAlign:'justify'
+        
     }
 });
